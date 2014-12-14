@@ -15,14 +15,14 @@ app.post('/', function(req, res) {
   // Get the color string.
   var colorString = req.body.Body;
   if (typeof colorString !== 'string') {
-    console.log('Invalid body: %s', JSON.stringify(req.body));
+    console.log('Invalid body: %s.', JSON.stringify(req.body));
     return res.end();
   }
 
   // Parse the color string.
   var color = parse(colorString.toLowerCase());
   if (color.rgb === undefined) {
-    console.log('Could not parse color string: %s', colorString);
+    console.log('Could not parse color string: %s.', colorString);
     return res.end();
   }
 
@@ -33,15 +33,15 @@ app.post('/', function(req, res) {
   var rgbString = rgbArray.join(',');
   
   // Send the color string to the Spark Core.
-  console.log('Sending the RGB color string "%s" to the Spark Core', rgbString);
+  console.log('Sending the RGB color string "%s" to the Spark Core.', rgbString);
   var url = 'https://api.spark.io/v1/devices/' + process.env.DEVICE_ID + '/color';
   var form = {params: rgbString, access_token: process.env.ACCESS_TOKEN};
   request.post({url: url, form: form}, function(err, response, body) {
     if (err !== null || response.statusCode !== 200) {
-      console.log('Could not send the RGB color string to the Spark Core: %s', JSON.stringify(body));
+      console.log('Could not send the RGB color string to the Spark Core: %s.', JSON.stringify(body));
       return;
     }
-    console.log('Successfully sent the RGB color string "%s" to the Spark core', rgbString);
+    console.log('Successfully sent the RGB color string "%s" to the Spark core.', rgbString);
   });
 
   return res.end();
@@ -51,5 +51,5 @@ app.post('/', function(req, res) {
 var server = app.listen(process.env.PORT, function() {
   var host = server.address().address;
   var port = server.address().port;
-  console.log('App running at http://%s:%s', host, port);
+  console.log('App running at http://%s:%s.', host, port);
 });
