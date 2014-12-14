@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 // Handle the '/' URL.
 app.post('/', function(req, res) {
   // Get the color string.
-  var colorString = req.body.color;
+  var colorString = req.body.Body;
   if (typeof colorString !== 'string') {
     console.log('Invalid body: %s', JSON.stringify(req.body));
     return res.end();
