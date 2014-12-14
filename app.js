@@ -20,7 +20,7 @@ app.post('/', function(req, res) {
   }
 
   // Parse the color string.
-  var color = parse(colorString);
+  var color = parse(colorString.toLowerCase());
   if (color.rgb === undefined) {
     console.log('Could not parse color string: %s', colorString);
     return res.end();
