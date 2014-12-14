@@ -1,0 +1,19 @@
+{
+  "name": "texting-colors",
+  "version": "1.0.0",
+  "description": "Parses a color string into RGB format to be send to a Spark Core via the Spark Cloud API.",
+  "license": "MIT",
+  "author": "Amit Burstein <amit.burstein@gmail.com> (http://amitburst.me)",
+  "homepage": "https://github.com/amitburst/texting-colors",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amitburst/texting-colors.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.10.0",
+    "express": "^4.10.6",
+    "parse-color": "^1.0.0",
+    "request": "^2.51.0"
+  }
+}
